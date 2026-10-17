@@ -18,11 +18,11 @@ int main(void) {
     assert(IsEmpty("a") == 0);
     assert(IsEmpty("hola") == 0);
 
-    /* ── GetLength — descomentar cuando implementes la funcion ──────────── */
-    /* assert(GetLength("") == 0); */
-    /* assert(GetLength("a") == 1); */
-    /* assert(GetLength("hola") == 4); */
-    /* assert(GetLength("hola mundo") == 10); */
+    /* ── GetLength ──────────────────────────────────────────────────────── */
+    assert(GetLength("") == 0);
+    assert(GetLength("a") == 1);
+    assert(GetLength("hola") == 4);
+    assert(GetLength("hola mundo") == 10);
 
     /* ── AreEqual — tiene un bug, estos tests ya estan activos ──────────── */
     assert(AreEqual("", "") == 1);
@@ -37,10 +37,14 @@ int main(void) {
     assert(AreDecimalDigits("12a") == 0);
     assert(AreDecimalDigits("") == 0);
 
-    /* ── Contains — descomentar cuando implementes la funcion ───────────── */
-    /* assert(Contains("hola", 'o') == 1); */
-    /* assert(Contains("hola", 'z') == 0); */
-    /* assert(Contains("", 'a') == 0); */
+    /* ── Contains ───────────────────────────────────────────────────────── */
+    assert(Contains("hola", 'o') == 1);
+    assert(Contains("hola", 'z') == 0);
+    assert(Contains("", 'a') == 0);
+    assert(Contains("hola", 'h') == 1);   /* primer caracter */
+    assert(Contains("hola", 'a') == 1);   /* ultimo caracter */
+    assert(Contains("a", 'a') == 1);      /* cadena de un solo caracter */
+    assert(Contains("hola", 'H') == 0);   /* distingue mayusculas */
 
     return 0;
 }
